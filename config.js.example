@@ -1,9 +1,7 @@
 // Copy this file to config.js and fill in your credentials
-// Get your API key from: https://portal.leen.dev/settings/api-keys
-// Get your connection ID from: https://portal.leen.dev/integrations
 
 export const CONFIG = {
   apiKey: 'YOUR_API_KEY_HERE',
   connectionId: 'YOUR_CONNECTION_UUID_HERE',
-  apiBaseUrl: 'https://api.leen.dev',  // Production API (or use http://localhost:8000 for local development)
+  apiBaseUrl: 'https://api.leen.dev',  // Production API
 };
