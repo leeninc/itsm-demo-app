@@ -57,10 +57,7 @@ itsm-demo-app/
 
 ### Step 1: Get Your Credentials
 
-1. Log in to [Leen Portal](https://portal.leen.dev)
-2. Navigate to Settings → API Keys and create a new API key
-3. Navigate to Integrations and find your ITSM connection
-4. Copy the Connection ID (UUID format)
+Contact Leen support to get your API and Connection credentials
 
 ### Step 2: Configure the Demo
 
