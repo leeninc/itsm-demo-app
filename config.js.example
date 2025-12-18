@@ -4,5 +4,5 @@
 export const CONFIG = {
   apiKey: 'YOUR_API_KEY_HERE',
   connectionId: 'YOUR_CONNECTION_UUID_HERE',
-  apiBaseUrl: 'https://api.leen.dev',  // Production API (or use http://localhost:8000 for local development)
+  apiBaseUrl: 'https://api.leen.dev',  // Production API
 };
