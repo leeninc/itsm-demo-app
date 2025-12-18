@@ -5,15 +5,12 @@ A standalone demonstration application showcasing Leen's ITSM write endpoints fo
 ## Quick Start
 
 ```bash
-# 1. Copy config template
-cp config.js.example config.js
-
-# 2. Edit config.js with your Leen API credentials
-
-# 3. Start a web server (REQUIRED - see note below)
+# 1. Start a web server (REQUIRED - see note below)
 python3 -m http.server 8080
 
-# 4. Open http://localhost:8080 in your browser
+# 2. Open http://localhost:8080 in your browser
+
+# 3. Enter your Leen API credentials in the login form
 ```
 
 > **⚠️ Important:** You MUST run this through a web server (not open index.html directly). Opening the file directly in your browser will cause CORS errors because ES6 modules require HTTP/HTTPS protocol.
@@ -32,11 +29,11 @@ python3 -m http.server 8080
 ```
 itsm-demo-app/
 ├── index.html              # Main demo application
-├── config.js.example       # Configuration template
-├── .gitignore             # Ignores config.js
+├── leen-logo.png          # Leen logo
+├── .gitignore             # Git ignore rules
 ├── README.md              # This file
 ├── js/
-│   ├── config-loader.js   # Configuration loader
+│   ├── config-loader.js   # Configuration loader (localStorage)
 │   ├── api.js             # API client wrapper
 │   ├── ui.js              # UI rendering and state
 │   ├── alerts.js          # Security alert templates
@@ -55,62 +52,41 @@ itsm-demo-app/
 
 ## Setup
 
-### Step 1: Get Your Credentials
-
-Contact Leen support to get your API and Connection credentials
-
-### Step 2: Configure the Demo
-
-**Option A: Configuration File (Recommended)**
-
-1. Copy the example configuration file:
-   ```bash
-   cp config.js.example config.js
-   ```
-
-2. Edit `config.js` with your credentials:
-   ```javascript
-   export const CONFIG = {
-     apiKey: 'your-api-key-here',
-     connectionId: 'your-connection-uuid-here',
-     apiBaseUrl: 'https://api.leen.dev'  // Production API
-   };
-   ```
-
-**Important**: The `config.js` file is gitignored and will not be committed. Keep your API key secure.
-
-**Option B: UI Configuration**
-
-If `config.js` doesn't exist, the demo will prompt you to enter credentials in the UI. These will be stored in browser localStorage.
-
-### Step 3: Run the Demo
+### Step 1: Run the Demo
 
 **⚠️ IMPORTANT:** You MUST use a web server. Do NOT open index.html directly in your browser.
 
-1. Open a terminal/command prompt and navigate to the demo directory:
-   ```bash
-   cd itsm-demo-app
-   ```
+Start a local web server:
 
-2. Start a local web server (choose one based on what you have installed):
-   ```bash
-   # Using Python 3 (most common, usually pre-installed on Mac/Linux)
-   python3 -m http.server 8080
+```bash
+# Using Python 3 (most common, usually pre-installed on Mac/Linux)
+python3 -m http.server 8080
 
-   # Or using Node.js (if you have it installed)
-   npx http-server -p 8080
+# Or using Node.js (if you have it installed)
+npx http-server -p 8080
 
-   # Or using PHP (if you have it installed)
-   php -S localhost:8080
-   ```
+# Or using PHP (if you have it installed)
+php -S localhost:8080
+```
 
-3. Open your browser to:
-   ```
-   http://localhost:8080
-   ```
-   **Note:** Use `http://localhost:8080`, NOT `file:///path/to/index.html`
+Open your browser to `http://localhost:8080`
 
-4. If configuration is valid, you'll see the demo interface with available projects and users
+**Note:** Use `http://localhost:8080`, NOT `file:///path/to/index.html`
+
+### Step 2: Enter Your Credentials
+
+When you first open the demo, you'll see a login form:
+
+1. Enter your **API Key**
+2. Enter your **Connection ID**
+3. (Optional) Change the **API Base URL** if using a local development environment
+4. Click **Connect**
+
+Your credentials are securely stored in your browser's localStorage only and are never sent to the demo server.
+
+### Step 3: Start Creating Tickets
+
+Once connected, you can start using the demo to create and manage ITSM tickets!
 
 ## Usage
 
@@ -382,5 +358,5 @@ The demo requires no build process. Simply:
 - **js/alerts.js** - Contains all security alert templates
 - **js/api.js** - API client with methods for all ITSM endpoints
 - **js/ui.js** - UI rendering logic and state management
-- **js/config-loader.js** - Configuration loading (file or localStorage)
+- **js/config-loader.js** - Configuration loading (localStorage only)
 - **js/main.js** - Application initialization and connection testing

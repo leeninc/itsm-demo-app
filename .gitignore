@@ -1,4 +1,13 @@
-# Ignore user configuration file containing API credentials
+# Ignore any configuration files containing API credentials
 config.js
+config.js.example
+*.local.js
 
+# Editor files
 .idea
+.vscode
+*.swp
+*.swo
+
+# macOS
+.DS_Store
