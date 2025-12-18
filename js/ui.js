@@ -224,6 +224,10 @@ export class DemoUI {
             <label class="block text-sm font-medium text-gray-700 mb-1">Identifier (optional)</label>
             <input type="text" name="identifier" class="w-full border-gray-300 rounded-md shadow-sm focus:border-sky-500 focus:ring-sky-500" placeholder="Custom identifier (auto-generated if omitted)">
           </div>
+
+          <div class="bg-sky-50 border border-sky-200 rounded-md p-4">
+            <h3 class="text-sm font-medium text-sky-900 mb-2">Vendor-First Pattern</h3>
+            <p class="text-sm text-sky-700">This will create the ticket in your vendor system (e.g., Jira) first, then store it in the Leen database.</p>
           </div>
 
           <div class="flex justify-end space-x-3">

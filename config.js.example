@@ -1,6 +1,5 @@
-// Copy this file to config.js and fill in your credentials
-// Get your API key from: https://portal.leen.dev/settings/api-keys
-// Get your connection ID from: https://portal.leen.dev/integrations
+// Copy this file to config.js and fill in your credentials'
+// JIRA ITSM docs url for connection creation: https://docs.leen.dev/integrations/jira-itsm-credential
 
 export const CONFIG = {
   apiKey: 'YOUR_API_KEY_HERE',
