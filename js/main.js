@@ -38,25 +38,19 @@ function showConfigurationPanel() {
   panel.classList.remove('hidden');
   panel.innerHTML = `
     <div class="max-w-2xl mx-auto px-4 py-8">
-      <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-        <h2 class="text-lg font-semibold text-yellow-900 mb-4">Configuration Required</h2>
-        <p class="text-sm text-yellow-700 mb-4">
-          To use this demo, you need to configure your API credentials. You can either:
+      <div class="bg-sky-50 border border-sky-200 rounded-lg p-6">
+        <div class="flex items-center mb-4">
+          <svg class="w-6 h-6 text-sky-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+          </svg>
+          <h2 class="text-xl font-semibold text-sky-900">Connect to Leen API</h2>
+        </div>
+        <p class="text-sm text-sky-700 mb-6">
+          Enter your Leen API credentials to get started. Your credentials are stored securely in your browser and never sent to this demo server.
         </p>
 
-        <div class="space-y-4">
-          <div class="bg-white rounded-md p-4">
-            <h3 class="font-medium text-gray-900 mb-2">Option 1: Configuration File (Recommended)</h3>
-            <ol class="text-sm text-gray-600 space-y-1 list-decimal list-inside">
-              <li>Copy <code class="bg-gray-100 px-1 rounded">config.js.example</code> to <code class="bg-gray-100 px-1 rounded">config.js</code></li>
-              <li>Edit the file with your API key and connection ID</li>
-              <li>Refresh this page</li>
-            </ol>
-          </div>
-
-          <div class="bg-white rounded-md p-4">
-            <h3 class="font-medium text-gray-900 mb-2">Option 2: Enter Credentials Here</h3>
-            <form id="config-form" class="space-y-3 mt-3">
+        <div class="bg-white rounded-md p-6 shadow-sm">
+          <form id="config-form" class="space-y-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-1">API Key</label>
                 <input type="text" name="apiKey" required
@@ -77,10 +71,15 @@ function showConfigurationPanel() {
                   placeholder="https://api.leen.dev or http://localhost:8000">
               </div>
               <button type="submit" class="w-full bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-md text-sm font-medium">
-                Save and Connect
+                Connect
               </button>
             </form>
-            <p class="text-xs text-gray-500 mt-2">Credentials will be saved in browser localStorage.</p>
+
+            <div class="mt-4 pt-4 border-t border-gray-200">
+              <p class="text-xs text-gray-600">
+                <strong>Note:</strong> Your credentials are stored only in your browser's localStorage and are never sent to this demo application server.
+              </p>
+            </div>
           </div>
         </div>
       </div>

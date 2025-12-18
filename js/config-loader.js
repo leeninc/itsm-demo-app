@@ -1,16 +1,15 @@
 export async function loadConfig() {
-  try {
-    // Try to import from config.js file (user-created)
-    const module = await import('../config.js');
-    return module.CONFIG;
-  } catch (e) {
-    // Fall back to localStorage if file doesn't exist
-    const stored = localStorage.getItem('leen-demo-config');
-    if (stored) {
+  // Load config from localStorage only (for public hosting security)
+  const stored = localStorage.getItem('leen-demo-config');
+  if (stored) {
+    try {
       return JSON.parse(stored);
+    } catch (e) {
+      console.error('Failed to parse stored config:', e);
+      return null;
     }
-    return null;  // No config found
   }
+  return null;  // No config found
 }
 
 export function saveConfigToStorage(config) {

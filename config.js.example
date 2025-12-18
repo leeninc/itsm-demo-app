@@ -1,8 +1,0 @@
-// Copy this file to config.js and fill in your credentials'
-// JIRA ITSM docs url for connection creation: https://docs.leen.dev/integrations/jira-itsm-credential
-
-export const CONFIG = {
-  apiKey: 'YOUR_API_KEY_HERE',
-  connectionId: 'YOUR_CONNECTION_UUID_HERE',
-  apiBaseUrl: 'https://api.leen.dev',  // Production API
-};
